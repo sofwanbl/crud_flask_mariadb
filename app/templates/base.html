@@ -1,0 +1,23 @@
+<doctype html>
+<html>
+  <head>
+     <title>{{ title }} - My first Flask apps </title>
+      <script type="text/javascript">
+       function tanya()
+        {
+         var tanya=confirm("Apakah anda ingin menghapus data ini ?")
+         if (tanya)
+           {
+             return true
+           }
+         else
+           {
+             return false
+           }   
+        }
+     </script>
+  </head>
+  <body>
+  {% block content %}{% endblock %}
+  </body>
+</html>

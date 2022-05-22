@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+<a href="http://localhost:5000/frm_entry">Entry Data</a>
+<table border=1>
+ <th>No</th><th>Value 1</th><th>Value 2</th><th>Operator</th><th>Remark</th>
+ <th>Result</th><th>Option</th> 
+ {% for rows in hasilnya %}
+ <tr>
+    <td>{{ loop.index }}</td><td>{{ rows[1] }}</td><td>{{ rows[2] }}</td>
+    <td>{{ rows[3] }}</td><td>{{ rows[4] }}</td>
+    <td>{{ rows[5] }}</td><td><a href="{{ url_for('frm_edit_data',id=rows[0])}}">Edit</a> | 
+                              <a href="{{ url_for('hapus_data',id=rows[0])}}" onClick="return tanya()">Delete </a> </td>
+  </tr>  
+ {% endfor %}
+</table>
+{% endblock %}
